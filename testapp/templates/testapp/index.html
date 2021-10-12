@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Student Info</title>
+    </head>
+    <body>
+        <h1> Student Info </h1>
+
+        {% if name %}
+            <p> Student Name : {{ name }} </p>
+            <p> Avrage Marks : {{ avg }} </p>
+
+            <br>
+            <a href="/student/"> Home </a>
+
+        {% else %}
+            <form action="/student/" method="post">
+                {% csrf_token %}
+                Student name : <input type="text" name="name"> <br><br>
+                Maths Marks : <input type="text" name="maths"> <br><br>
+                Science Marks : <input type="text" name="science"> <br><br>
+                History Marks : <input type="text" name="history"> <br><br>
+                <input type="submit" value="Submit">
+            </form>
+        {% endif %}
+
+    </body>
+</html>
+
+
+
