@@ -7,4 +7,5 @@ class Student(models.Model):
     maths = models.IntegerField()
     science = models.IntegerField()
     history = models.IntegerField()
+    avg = models.FloatField()
 
