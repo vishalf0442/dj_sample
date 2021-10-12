@@ -21,6 +21,29 @@
                 History Marks : <input type="text" name="history"> <br><br>
                 <input type="submit" value="Submit">
             </form>
+            <br><br>
+            <table border="1" cellpadding="5">
+                <thead>
+                    <tr>
+                        <th> Student Name </th>
+                        <th> Maths </th>
+                        <th> Science </th>
+                        <th> History </th>
+                        <th> Avg </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for std in stds %}
+                        <tr>
+                            <td> {{std.name}} </td>
+                            <td> {{std.maths}} </td>
+                            <td> {{std.science}} </td>
+                            <td> {{std.history}} </td>
+                            <td> {{std.avg}} </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         {% endif %}
 
     </body>
