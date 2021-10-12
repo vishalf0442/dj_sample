@@ -11,6 +11,7 @@ def calc_percent(request):
         science = int(data['science'])
         history = int(data['history'])
         avg = (maths+science+history) / 3
+        Student.objects.create(name=name, maths=maths, science=science, history=history, avg=avg)
         return render(request, "testapp/index.html", context={"name":name, "avg":avg})
     return render(request, "testapp/index.html")
 
