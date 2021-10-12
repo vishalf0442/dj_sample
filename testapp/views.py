@@ -13,7 +13,8 @@ def calc_percent(request):
         avg = (maths+science+history) / 3
         Student.objects.create(name=name, maths=maths, science=science, history=history, avg=avg)
         return render(request, "testapp/index.html", context={"name":name, "avg":avg})
-    return render(request, "testapp/index.html")
+    stds = Student.objects.all()
+    return render(request, "testapp/index.html", context={"stds":stds})
 
 
 
